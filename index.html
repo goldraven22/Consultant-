@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Raven Consulting | Business, Funding & Credit Strategy</title>
+<meta name="description" content="Gold Raven Consulting helps entrepreneurs, startups, and small businesses take control of their operations, funding, and growth. Services include business consulting, funding strategy, credit optimization, receivables, and operational & content systems.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<meta property="og:title" content="Gold Raven Consulting | Business, Funding & Credit Strategy">
+<meta property="og:description" content="Helping entrepreneurs and small businesses structure, fund, and scale their ventures through practical business consulting, funding strategy, and credit optimization.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="URL_TO_HERO_IMAGE">
+<meta property="og:url" content="YOUR_WEBSITE_URL">
+
+<style>
+/* GENERAL */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat',sans-serif; }
+body { background:#000; color:#fff; line-height:1.5; letter-spacing:0.3px; overflow-x:hidden; }
+a { text-decoration:none; color:#fff; }
+
+/* NAVBAR */
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; position:fixed; width:100%; top:0; background:#000; z-index:9999; }
+.navbar .logo { font-weight:900; font-size:20px; letter-spacing:2px; color:#d4af37; }
+.navbar nav a { margin-left:30px; font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+
+/* HERO */
+.hero { position:relative; height:100vh; background:#000 url('black-man-suit-hands.jpg') center/cover no-repeat; display:flex; align-items:center; justify-content:flex-start; padding:0 50px; }
+.hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1; pointer-events:none; }
+.hero-inner { position:relative; z-index:2; max-width:550px; }
+.hero-text-wrapper { position: relative; display: inline-block; margin-bottom: 20px; }
+.hero-text-wrapper h1 { font-size:72px; font-weight:900; color:#fff; position:relative; z-index:2; line-height:1.1; }
+.hero-text-wrapper .gold-bar { position:absolute; bottom:8px; left:0; width:100%; height:12px; background:#d4af37; z-index:1; }
+.hero p { color:#d4af37; letter-spacing:1px; font-size:16px; margin-bottom:15px; line-height:1.5; }
+.hero-sub { font-size:18px; color:#bbb; margin-bottom:30px; line-height:1.6; letter-spacing:0.5px; }
+.btn { padding:14px 40px; border:1px solid #d4af37; color:#d4af37; text-transform:uppercase; font-size:12px; background:transparent; cursor:pointer; z-index:10; position:relative; }
+
+/* SECTIONS */
+section { padding:120px 50px; scroll-margin-top:140px; text-align:center; position:relative; z-index:2; }
+h2 { font-size:22px; color:#d4af37; letter-spacing:6px; margin-bottom:50px; font-weight:700; }
+
+/* SERVICE GRID */
+.service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+.card { background:#111; padding:30px; border:1px solid #222; transition:0.3s; min-height:270px; }
+.card:hover { border-color:#d4af37; }
+.card h3 { font-size:18px; color:#d4af37; margin-bottom:12px; font-weight:700; }
+.card p { color:#ccc; font-size:15px; line-height:1.6; letter-spacing:0.5px; }
+
+/* ABOUT */
+.about p { color:#bbb; font-size:17px; max-width:650px; margin:0 auto 20px auto; line-height:1.7; letter-spacing:0.4px; }
+.about ul { max-width:650px; margin:20px auto; list-style-type:disc; padding-left:25px; color:#ccc; text-align:left; line-height:1.7; font-size:16px; letter-spacing:0.3px; }
+
+/* CONTACT */
+.contact form { max-width:500px; margin:0 auto; display:flex; flex-direction:column; }
+.contact input, .contact textarea { margin-bottom:15px; padding:14px; background:#111; border:1px solid #222; color:#fff; font-size:14px; }
+.contact button { margin-top:10px; cursor:pointer; }
+
+/* FOOTER */
+footer { padding:30px; text-align:center; font-size:14px; color:#888; }
+
+/* MOBILE */
+@media(max-width:1024px){ .hero-text-wrapper h1 { font-size:56px; } .hero p { font-size:15px; line-height:1.5; } .hero-sub { font-size:16px; line-height:1.5; } .card h3 { font-size:16px; } .card p { font-size:14px; } .about p { font-size:15px; } .about ul { font-size:14px; } }
+@media(max-width:768px){ .hero { padding:0 20px; } .hero-inner { display:flex; flex-direction:column; align-items:flex-start; } .hero-text-wrapper h1 { font-size:42px; } .hero p { font-size:14px; } .hero-sub { font-size:15px; } .card { min-height:auto; padding:25px; } }
+@media(max-width:480px){ .hero-text-wrapper h1 { font-size:36px; } .hero p { font-size:13px; } .hero-sub { font-size:14px; } .card h3 { font-size:15px; } .card p { font-size:13px; } .about p { font-size:14px; } .about ul { font-size:13px; padding-left:15px; } }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">GOLD RAVEN</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-text-wrapper">
+      <h1>Strategy. Capital. Control.</h1>
+      <div class="gold-bar"></div>
+    </div>
+    <p>Business Consulting • Funding Strategy • Credit Optimization • Receivables Acquisition • Operational & Content Systems</p>
+    <p class="hero-sub">
+      We help entrepreneurs, startups, and small businesses take control of their operations, funding, and growth. 
+      Our approach focuses on clarity, practical strategy, and building systems that create real results.
+    </p>
+    <a href="#contact" class="btn">Request Your Strategy Session</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>Capabilities</h2>
+  <div class="service-grid">
+    <div class="card">
+      <h3>Business Consulting</h3>
+      <p>Structure your business, simplify operations, and create systems that work. Every step is practical and tailored to your goals.</p>
+    </div>
+    <div class="card">
+      <h3>Funding Strategy</h3>
+      <p>We help startups and growing businesses secure capital, plan funding, and position investors for maximum impact.</p>
+    </div>
+    <div class="card">
+      <h3>Credit Optimization</h3>
+      <p>Build and leverage personal and business credit strategically, giving you access to capital when you need it most.</p>
+    </div>
+    <div class="card">
+      <h3>Operational & Content Systems</h3>
+      <p>Streamline workflows and implement content-driven systems that save time, grow your brand, and attract the right clients.</p>
+    </div>
+    <div class="card">
+      <h3>Receivables Acquisition</h3>
+      <p>Acquire and manage receivables or portfolios efficiently, giving you control over assets and maximizing returns.</p>
+    </div>
+    <div class="card">
+      <h3>Brand & Content Positioning</h3>
+      <p>We help you establish authority and credibility, creating content that builds your brand and brings in high-value clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <h2>About Gold Raven Consulting</h2>
+  <p>We work with entrepreneurs, startups, and small businesses to take control of their operations, funding, and growth. Every strategy is practical, focused, and designed to deliver results.</p>
+  <ul>
+    <li>Business consulting for startups and growing ventures</li>
+    <li>Funding strategy and capital access</li>
+    <li>Credit optimization and leverage systems</li>
+    <li>Receivables portfolio structuring and acquisition</li>
+    <li>Operational and content systems that scale your business</li>
+  </ul>
+  <p>Our approach is clear: actionable strategies, real results, and systems that keep your business moving forward.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Private Consultation</h2>
+  <p>Request a confidential session to discuss your business, funding, credit, receivables, or growth strategies. Fill out the form below and take control of your next move.</p>
+  <form id="consultation-form">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="phone" placeholder="Phone Number">
+    <textarea name="note" placeholder="Tell us about your business, goals, or current challenges" rows="5"></textarea>
+    <button type="submit" class="btn">Book Your Session</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Gold Raven Consulting</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Smooth scroll with offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      const target=document.querySelector(this.getAttribute('href'));
+      const yOffset=-110;
+      const y=target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  });
+
+  // Supabase secure form
+  const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const form=document.getElementById('consultation-form');
+  if(form){
+    form.addEventListener('submit', async e=>{
+      e.preventDefault();
+      const name=form.name.value.trim();
+      const email=form.email.value.trim();
+      const phone=form.phone.value.trim();
+      const note=form.note.value.trim();
+      if(!name||!email){alert('Please enter name and email'); return;}
+      try{
+        const { error } = await supabaseClient.from('consultation_requests').insert([{name,email,phone,note}]);
+        if(error) throw error;
+        alert('Thank you! Your request has been submitted.');
+        form.reset();
+      } catch(err){console.error(err); alert('Submission failed');}
+    });
+  }
+});
+</script>
+
+</body>
+</html>
